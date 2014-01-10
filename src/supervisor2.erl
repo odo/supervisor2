@@ -83,6 +83,7 @@
      terminate/2, code_change/3]).
 -export([try_again_restart/3]).
 
+-define(use_specs, true).
 %%--------------------------------------------------------------------------
 -ifdef(use_specs).
 -export_type([child_spec/0, startchild_ret/0, strategy/0, sup_name/0]).
