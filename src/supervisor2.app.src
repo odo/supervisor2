@@ -1,0 +1,12 @@
+{application, supervisor2,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { supervisor2, []}},
+  {env, []}
+ ]}.
