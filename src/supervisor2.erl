@@ -146,7 +146,7 @@
 -record(state, {name,
         strategy               :: strategy(),
         children = []          :: [child_rec()],
-        dynamics               :: ?DICT() | ?SET(),
+        dynamics,
         intensity              :: non_neg_integer(),
         period                 :: pos_integer(),
         restarts = [],
@@ -1485,7 +1485,7 @@ add_restart(State) ->
     I = State#state.intensity,
     P = State#state.period,
     R = State#state.restarts,
-    Now = erlang:now(),
+    Now = erlang:timestamp(),
     R1 = add_restart([Now|R], Now, P),
     State1 = State#state{restarts = R1},
     case length(R1) of
